@@ -17,6 +17,9 @@ app.use(function(req, res, next) {
 });
 request = require('request');
 app.use('/leaderboard', leaderboardController);
+app.get('/', function (req, res) {
+	res.status(200).end(JSON.stringify({sex: true}));
+})
 
 app.use(function (req, res, next) {
 	next(createError(404));
