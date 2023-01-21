@@ -14,6 +14,15 @@
 		}
 	);
 
+	router.get(
+		'/all-scores/:gameVersion',
+		middleware.getAllScores,
+		function (req, res) {
+			res.status(200).end(JSON.stringify(req.response));
+		}
+	);
+
+
 	router.post(
 		'/add-new-score',
 		middleware.addNewScore,

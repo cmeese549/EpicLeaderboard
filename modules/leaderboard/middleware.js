@@ -4,8 +4,9 @@ const service = require("./service");
     'use strict';
 
     module.exports = {
-        getTopTen: getTopTen,
-        addNewScore: addNewScore
+        getTopTen,
+        addNewScore,
+        getAllScores
     };
 
     const filter = require('leo-profanity');
@@ -35,6 +36,34 @@ const service = require("./service");
         }
         catch(err) {
             next(err);
+        }
+    }
+
+    function getAllScores(req, res, next) {
+        try{
+            service
+                .getAllScores(req.params.gameVersion)
+                .then(success)
+                .catch(failure)
+            function success (data) {
+                let resData = []
+                data.forEach(entry => {
+                    resData.push({
+                        name: entry.name,
+                        score: entry.score,
+                        wave: entry.wave,
+                        gameVersion: entry.gameVersion
+                    });
+                });
+                req.response = resData;
+                next();
+            }
+            function failure(error) {
+                next(error);
+            }
+        }
+        catch(err){
+            next(err)
         }
     }
 
