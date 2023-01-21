@@ -44,7 +44,7 @@ const service = require("./service");
                 .addScore({ 
                     name: filter.clean(req.body.name), 
                     score: req.body.score,
-                    wave:  req.body.levelName,
+                    wave:  req.body.wave,
                     gameVersion: req.body.gameVersion
                 })
                 .then(success)
