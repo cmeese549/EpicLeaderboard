@@ -1,0 +1,38 @@
+{
+  "name": "berkey-filters-api",
+  "version": "0.1.9",
+  "private": true,
+  "scripts": {
+    "start": "clear && node ./bin/www",
+    "test": "mocha --recursive ./tests --watch ./modules ./tests app",
+    "lint": "npx eslint modules --fix",
+    "validate": "npm ls"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "dot-env": "0.0.1",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "fs": "0.0.1-security",
+    "http-errors": "~1.6.3",
+    "leo-profanity": "^1.2.6",
+    "mongodb": "^3.2.6",
+    "mongoose": "^5.5.11"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "mocha": "^6.1.4",
+    "mockgoose-fix": "^7.3.6",
+    "node-mocks-http": "^1.7.5",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "semistandard": "^14.0.1",
+    "sinon": "^7.3.2",
+    "sinon-mongoose": "^2.3.0",
+    "standard": "^14.0.0"
+  }
+}
