@@ -8,15 +8,14 @@
 
 	const model = require('./module')().model;
 
-	function getTopTenScore (levelName, gameVersion) {
-		return model.find({ level: levelName, gameVersion: gameVersion })
+	function getTopTenScore (gameVersion) {
+		return model.find({gameVersion})
 			.sort('-score')
 			.limit(10)
 			.exec();
 	}
 
 	function addScore (data) {
-		console.log(data);
 		return model.create(data);
 	}
 })();
