@@ -69,6 +69,9 @@ const service = require("./service");
 
     function addNewScore(req, res, next) {
         try {
+            if (name == "Sad Ham") {
+                name = "Sad Ham Jones the 7th";
+            }
             service
                 .addScore({ 
                     name: filter.clean(req.body.name), 
